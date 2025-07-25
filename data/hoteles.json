@@ -1,0 +1,100 @@
+{
+  "hoteles": [
+    {
+      "id": 1,
+      "nombre": "Hotel Xcaret México",
+      "ciudad": "Riviera Maya",
+      "estado": "Quintana Roo",
+      "politica": "Acepta hasta 2 mascotas por habitación. Cargo adicional de $500 MXN por noche por mascota.",
+      "imagen": "/images/hotel-xcaret.jpg",
+      "enlace": "https://www.booking.com/hotel-xcaret-mexico",
+      "descripcion": "Resort todo incluido con experiencias únicas. Política pet-friendly en habitaciones seleccionadas.",
+      "precio": "Desde $8,500 MXN por noche",
+      "servicios": ["Parque acuático", "Spa", "Restaurantes", "Actividades para mascotas"]
+    },
+    {
+      "id": 2,
+      "nombre": "Casa de la Playa",
+      "ciudad": "Playa del Carmen",
+      "estado": "Quintana Roo",
+      "politica": "Acepta mascotas sin costo adicional. Solo en habitaciones de planta baja.",
+      "imagen": "/images/casa-playa.jpg",
+      "enlace": "https://www.booking.com/casa-de-la-playa",
+      "descripcion": "Boutique hotel frente al mar con ambiente relajado y pet-friendly.",
+      "precio": "Desde $4,200 MXN por noche",
+      "servicios": ["Playa privada", "Restaurant", "Spa", "Área de juegos para mascotas"]
+    },
+    {
+      "id": 3,
+      "nombre": "Hotel Rosewood San Miguel",
+      "ciudad": "San Miguel de Allende",
+      "estado": "Guanajuato",
+      "politica": "Acepta mascotas hasta 15kg. Cargo de $800 MXN por estadía.",
+      "imagen": "/images/rosewood-sanmiguel.jpg",
+      "enlace": "https://www.booking.com/rosewood-san-miguel",
+      "descripcion": "Hotel de lujo en el corazón de San Miguel de Allende con servicios pet-friendly.",
+      "precio": "Desde $6,800 MXN por noche",
+      "servicios": ["Spa", "Restaurante gourmet", "Jardines", "Servicio de paseo para mascotas"]
+    },
+    {
+      "id": 4,
+      "nombre": "Hacienda Temozon Sur",
+      "ciudad": "Mérida",
+      "estado": "Yucatán",
+      "politica": "Mascotas bienvenidas sin costo adicional. Máximo 2 por habitación.",
+      "imagen": "/images/hacienda-temozon.jpg",
+      "enlace": "https://www.booking.com/hacienda-temozon",
+      "descripcion": "Ex-hacienda henequenera convertida en hotel de lujo con amplios jardines.",
+      "precio": "Desde $5,500 MXN por noche",
+      "servicios": ["Cenote privado", "Spa", "Jardines extensos", "Tours con mascotas"]
+    },
+    {
+      "id": 5,
+      "nombre": "Hotel Boutique Quinta Chanabnal",
+      "ciudad": "Palenque",
+      "estado": "Chiapas",
+      "politica": "Acepta mascotas de cualquier tamaño. Cargo de $300 MXN por noche.",
+      "imagen": "/images/quinta-chanabnal.jpg",
+      "enlace": "https://www.booking.com/quinta-chanabnal",
+      "descripcion": "Hotel eco-friendly rodeado de selva tropical, perfecto para aventuras con mascotas.",
+      "precio": "Desde $2,800 MXN por noche",
+      "servicios": ["Piscina natural", "Tours ecológicos", "Restaurant", "Senderos para caminar"]
+    },
+    {
+      "id": 6,
+      "nombre": "Hotel Condesa DF",
+      "ciudad": "Ciudad de México",
+      "estado": "CDMX",
+      "politica": "Pet-friendly sin restricciones de tamaño. Servicios especiales para mascotas.",
+      "imagen": "/images/condesa-df.jpg",
+      "enlace": "https://www.booking.com/condesa-df",
+      "descripcion": "Hotel boutique en la trendy Colonia Condesa con ambiente cosmopolita.",
+      "precio": "Desde $3,500 MXN por noche",
+      "servicios": ["Rooftop bar", "Spa", "Restaurant", "Parque Chapultepec cercano"]
+    },
+    {
+      "id": 7,
+      "nombre": "Hotel Villa Ganz",
+      "ciudad": "Guadalajara",
+      "estado": "Jalisco",
+      "politica": "Acepta mascotas pequeñas y medianas. Depósito reembolsable de $1,000 MXN.",
+      "imagen": "/images/villa-ganz.jpg",
+      "enlace": "https://www.booking.com/villa-ganz",
+      "descripcion": "Elegante hotel boutique en el corazón de Guadalajara con jardines privados.",
+      "precio": "Desde $4,000 MXN por noche",
+      "servicios": ["Jardín privado", "Spa", "Restaurant gourmet", "Concierge para mascotas"]
+    },
+    {
+      "id": 8,
+      "nombre": "Hotel Matilda",
+      "ciudad": "San Miguel de Allende",
+      "estado": "Guanajuato",
+      "politica": "Política muy pet-friendly. Acepta mascotas sin cargo adicional.",
+      "imagen": "/images/hotel-matilda.jpg",
+      "enlace": "https://www.booking.com/hotel-matilda",
+      "descripcion": "Hotel contemporáneo con arte moderno y excelente ubicación.",
+      "precio": "Desde $5,200 MXN por noche",
+      "servicios": ["Galería de arte", "Spa", "Restaurante", "Terraza con vista"]
+    }
+  ]
+}
