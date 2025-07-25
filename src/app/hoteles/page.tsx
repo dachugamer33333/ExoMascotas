@@ -1,15 +1,15 @@
+'use client';
+
 import Link from "next/link";
-import { Metadata } from "next";
+import { useState, useMemo } from "react";
 import hoteles from "../../../data/hoteles.json";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import HotelCard from "../../../components/HotelCard";
+import SearchFilters from "../../../components/SearchFilters";
+import ChatAssistant from "../../../components/ChatAssistant";
 
-export const metadata: Metadata = {
-  title: "Hoteles Pet-Friendly en México | PetViajes",
-  description: "Descubre los mejores hoteles que aceptan mascotas en México. Encuentra alojamientos pet-friendly en destinos como Riviera Maya, San Miguel de Allende, Ciudad de México y más.",
-  keywords: "hoteles pet-friendly México, alojamiento mascotas, viajes con perros, hoteles que aceptan mascotas, turismo pet-friendly",
-};
+// Metadata se maneja en layout.tsx para client components
 
 interface Hotel {
   id: number;
@@ -22,9 +22,39 @@ interface Hotel {
   descripcion: string;
   precio: string;
   servicios: string[];
+  rating: number;
+  categoria: string;
+}
+
+interface SearchFilters {
+  ciudad: string;
+  categoria: string;
+  busqueda: string;
 }
 
 export default function HotelesPage() {
+  const [searchFilters, setSearchFilters] = useState<SearchFilters>({
+    ciudad: '',
+    categoria: '',
+    busqueda: ''
+  });
+
+  const filteredHotels = useMemo(() => {
+    return hoteles.hoteles.filter((hotel: Hotel) => {
+      const matchesCiudad = !searchFilters.ciudad || hotel.ciudad === searchFilters.ciudad;
+      const matchesCategoria = !searchFilters.categoria || hotel.categoria === searchFilters.categoria;
+      const matchesBusqueda = !searchFilters.busqueda || 
+        hotel.nombre.toLowerCase().includes(searchFilters.busqueda.toLowerCase()) ||
+        hotel.ciudad.toLowerCase().includes(searchFilters.busqueda.toLowerCase()) ||
+        hotel.descripcion.toLowerCase().includes(searchFilters.busqueda.toLowerCase());
+      
+      return matchesCiudad && matchesCategoria && matchesBusqueda;
+    });
+  }, [searchFilters]);
+
+  const handleSearch = (filters: SearchFilters) => {
+    setSearchFilters(filters);
+  };
   return (
     <div className="min-h-screen bg-gray-50">
       <Header currentPage="hoteles" />
@@ -58,15 +88,23 @@ export default function HotelesPage() {
             Cada hotel ha sido cuidadosamente seleccionado y verificado.
           </p>
           
-          {/* Search bar preview */}
-          <div className="max-w-md mx-auto bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-white/20">
-            <div className="flex items-center space-x-3 px-4 py-3">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <span className="text-gray-500">Buscar por ciudad...</span>
+          {/* Search bar preview - Solo visual */}
+          <div className="max-w-md mx-auto">
+            <div className="text-center text-gray-600 mb-2">
+              <span className="text-sm">👇 Usa los filtros de búsqueda para encontrar tu hotel ideal</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Search and Filters */}
+      <section className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SearchFilters
+            ciudades={hoteles.ciudades}
+            categorias={hoteles.categorias}
+            onSearch={handleSearch}
+          />
         </div>
       </section>
 
@@ -75,18 +113,39 @@ export default function HotelesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-emerald-800 bg-clip-text text-transparent">
-              Nuestros hoteles destacados
+              {filteredHotels.length > 0 ? `${filteredHotels.length} hoteles encontrados` : 'Nuestros hoteles destacados'}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Cada alojamiento ha sido verificado para garantizar la mejor experiencia para ti y tu mascota
+              {filteredHotels.length > 0 
+                ? 'Hoteles que coinciden con tu búsqueda' 
+                : 'Cada alojamiento ha sido verificado para garantizar la mejor experiencia para ti y tu mascota'
+              }
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {hoteles.hoteles.map((hotel: Hotel) => (
-              <HotelCard key={hotel.id} hotel={hotel} />
-            ))}
-          </div>
+          {filteredHotels.length > 0 ? (
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+              {filteredHotels.map((hotel: Hotel) => (
+                <HotelCard key={hotel.id} hotel={hotel} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/20 max-w-md mx-auto">
+                <div className="text-6xl mb-4">🔍</div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">No se encontraron hoteles</h3>
+                <p className="text-gray-600 mb-6">
+                  Intenta ajustar tus filtros de búsqueda para encontrar más opciones.
+                </p>
+                <button
+                  onClick={() => setSearchFilters({ ciudad: '', categoria: '', busqueda: '' })}
+                  className="inline-flex items-center px-6 py-3 rounded-2xl text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg font-semibold"
+                >
+                  Ver todos los hoteles
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -109,6 +168,7 @@ export default function HotelesPage() {
       </section>
 
       <Footer />
+      <ChatAssistant />
     </div>
   );
 }

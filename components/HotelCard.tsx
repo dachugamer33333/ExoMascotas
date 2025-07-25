@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Hotel {
   id: number;
   nombre: string;
@@ -9,6 +11,8 @@ interface Hotel {
   descripcion: string;
   precio: string;
   servicios: string[];
+  rating: number;
+  categoria: string;
 }
 
 interface HotelCardProps {
@@ -22,24 +26,38 @@ export default function HotelCard({ hotel }: HotelCardProps) {
       <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 to-green-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
       
       <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20">
-        {/* Image placeholder with enhanced gradient */}
-        <div className="relative h-56 bg-gradient-to-br from-emerald-400 via-green-500 to-emerald-600 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="absolute top-4 right-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-emerald-700 shadow-lg backdrop-blur-sm">
+        {/* Hotel Image */}
+        <div className="relative h-56 overflow-hidden">
+          <Image 
+            src={hotel.imagen} 
+            alt={hotel.nombre}
+            width={800}
+            height={600}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            onError={(e) => {
+              e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMF8xKSIvPgo8cGF0aCBkPSJNNDAwIDI1MEM0MTYuNTY5IDI1MCA0MzAgMjM2LjU2OSA0MzAgMjIwQzQzMCAyMDMuNDMxIDQxNi41NjkgMTkwIDQwMCAxOTBDMzgzLjQzMSAxOTAgMzcwIDIwMy40MzEgMzcwIDIyMEMzNzAgMjM2LjU2OSAzODMuNDMxIDI1MCA0MDAgMjUwWiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC44Ii8+CjxwYXRoIGQ9Ik0zNTAgMzUwSDQ1MFY0MTBIM0IwVjM1MFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzBfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iODAwIiB5Mj0iNjAwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM2MUIyRjAiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTBCOTgxIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHN2Zz4=';
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          
+          {/* Badges */}
+          <div className="absolute top-4 left-4">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500 text-white shadow-lg">
               🐾 Pet-Friendly
             </span>
           </div>
-          <div className="relative z-10 text-center text-white">
-            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 shadow-2xl">
-              <span className="text-5xl block mb-2">🏨</span>
-              <p className="text-sm font-medium">{hotel.ciudad}</p>
-            </div>
+          
+          <div className="absolute top-4 right-4">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-gray-800 shadow-lg backdrop-blur-sm">
+              ⭐ {hotel.rating}/5
+            </span>
           </div>
           
-          {/* Floating elements */}
-          <div className="absolute top-6 left-6 w-8 h-8 bg-white/20 rounded-full blur-sm animate-pulse"></div>
-          <div className="absolute bottom-8 right-8 w-6 h-6 bg-white/20 rounded-full blur-sm animate-pulse delay-1000"></div>
+          <div className="absolute bottom-4 left-4">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500 text-white shadow-lg capitalize">
+              {hotel.categoria.replace('-', ' ')}
+            </span>
+          </div>
         </div>
         
         <div className="p-8">
