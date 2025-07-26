@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 interface HeaderProps {
@@ -18,11 +19,17 @@ export default function Header({ currentPage = "inicio" }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-emerald-500 to-green-500 rounded-xl p-2 shadow-lg">
-              <span className="text-xl">🐾</span>
+            <div className="rounded-xl p-2 shadow-lg bg-white">
+              <Image 
+                src="/logo.png" 
+                alt="HotPet Logo" 
+                width={24} 
+                height={24}
+                className="w-6 h-6"
+              />
             </div>
             <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent hover:from-emerald-700 hover:to-green-700 transition-all duration-300">
-              PetViajes
+              HotPet
             </Link>
           </div>
           

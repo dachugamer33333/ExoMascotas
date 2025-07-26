@@ -1,0 +1,224 @@
+{
+  "hoteles": [
+    {
+      "id": 1000,
+      "nombre": "Hotel Premium Cancun",
+      "ciudad": "Cancun",
+      "estado": "Quintana Roo",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1597149041240-27bff308c7ae?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/cancun.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de cancun. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $5241 MXN por noche",
+      "servicios": [
+        "Piscina",
+        "Restaurante",
+        "Desayuno incluido",
+        "Estacionamiento",
+        "Gimnasio"
+      ],
+      "rating": 4.5,
+      "categoria": "urbano"
+    },
+    {
+      "id": 1001,
+      "nombre": "Hotel Premium Mexico city",
+      "ciudad": "Mexico city",
+      "estado": "CDMX",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/mexico-city.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de mexico-city. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $3792 MXN por noche",
+      "servicios": [
+        "WiFi gratuito",
+        "Área pet-friendly",
+        "Bar",
+        "Aire acondicionado",
+        "Desayuno incluido"
+      ],
+      "rating": 4.7,
+      "categoria": "eco"
+    },
+    {
+      "id": 1002,
+      "nombre": "Hotel Premium Guadalajara",
+      "ciudad": "Guadalajara",
+      "estado": "Jalisco",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1597149041240-27bff308c7ae?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/guadalajara.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de guadalajara. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $2325 MXN por noche",
+      "servicios": [
+        "Estacionamiento",
+        "Gimnasio",
+        "WiFi gratuito"
+      ],
+      "rating": 3.9,
+      "categoria": "urbano"
+    },
+    {
+      "id": 1003,
+      "nombre": "Hotel Premium Playa del-carmen",
+      "ciudad": "Playa del-carmen",
+      "estado": "Quintana Roo",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/playa-del-carmen.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de playa-del-carmen. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $4527 MXN por noche",
+      "servicios": [
+        "Recepción 24h",
+        "WiFi gratuito",
+        "Piscina",
+        "Servicio a la habitación",
+        "Desayuno incluido"
+      ],
+      "rating": 3.3,
+      "categoria": "urbano"
+    },
+    {
+      "id": 1004,
+      "nombre": "Hotel Premium Tulum",
+      "ciudad": "Tulum",
+      "estado": "Quintana Roo",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/tulum.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de tulum. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $6764 MXN por noche",
+      "servicios": [
+        "Spa",
+        "Bar",
+        "Gimnasio",
+        "Piscina",
+        "Estacionamiento",
+        "Restaurante"
+      ],
+      "rating": 4.3,
+      "categoria": "urbano"
+    },
+    {
+      "id": 1005,
+      "nombre": "Hotel Premium Los cabos",
+      "ciudad": "Los cabos",
+      "estado": "Baja California Sur",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/los-cabos.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de los-cabos. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $3818 MXN por noche",
+      "servicios": [
+        "Desayuno incluido",
+        "Recepción 24h",
+        "WiFi gratuito",
+        "Estacionamiento",
+        "Piscina",
+        "Servicio a la habitación"
+      ],
+      "rating": 3.9,
+      "categoria": "negocios"
+    },
+    {
+      "id": 1006,
+      "nombre": "Hotel Premium Puerto vallarta",
+      "ciudad": "Puerto vallarta",
+      "estado": "Jalisco",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/puerto-vallarta.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de puerto-vallarta. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $6824 MXN por noche",
+      "servicios": [
+        "WiFi gratuito",
+        "Gimnasio",
+        "Recepción 24h",
+        "Aire acondicionado"
+      ],
+      "rating": 4.6,
+      "categoria": "eco"
+    },
+    {
+      "id": 1007,
+      "nombre": "Hotel Premium Merida",
+      "ciudad": "Merida",
+      "estado": "Yucatán",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/merida.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de merida. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $6807 MXN por noche",
+      "servicios": [
+        "Servicio a la habitación",
+        "Gimnasio",
+        "Estacionamiento"
+      ],
+      "rating": 3.4,
+      "categoria": "negocios"
+    },
+    {
+      "id": 1008,
+      "nombre": "Hotel Premium Oaxaca",
+      "ciudad": "Oaxaca",
+      "estado": "Oaxaca",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/oaxaca.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de oaxaca. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $2365 MXN por noche",
+      "servicios": [
+        "Desayuno incluido",
+        "Bar",
+        "Restaurante",
+        "Servicio a la habitación",
+        "Recepción 24h",
+        "Gimnasio"
+      ],
+      "rating": 4.1,
+      "categoria": "resort"
+    },
+    {
+      "id": 1009,
+      "nombre": "Hotel Premium San miguel-de-allende",
+      "ciudad": "San miguel-de-allende",
+      "estado": "Guanajuato",
+      "politica": "Acepta mascotas con políticas específicas. Consulte al momento de la reserva.",
+      "imagen": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+      "enlace": "https://www.booking.com/city/mx/san-miguel-de-allende.html",
+      "descripcion": "Excelente hotel ubicado en el corazón de san-miguel-de-allende. Instalaciones modernas y servicios de calidad para huéspedes y sus mascotas.",
+      "precio": "Desde $3132 MXN por noche",
+      "servicios": [
+        "Piscina",
+        "Aire acondicionado",
+        "Spa",
+        "Recepción 24h",
+        "Servicio a la habitación",
+        "WiFi gratuito"
+      ],
+      "rating": 3.7,
+      "categoria": "resort"
+    }
+  ],
+  "ciudades": [
+    "Cancun",
+    "Mexico city",
+    "Guadalajara",
+    "Playa del-carmen",
+    "Tulum",
+    "Los cabos",
+    "Puerto vallarta",
+    "Merida",
+    "Oaxaca",
+    "San miguel-de-allende"
+  ],
+  "categorias": [
+    "boutique",
+    "resort",
+    "urbano",
+    "negocios",
+    "eco"
+  ],
+  "lastUpdated": "2025-07-25T03:25:07.858Z",
+  "source": "Datos de respaldo - datos generados localmente"
+}

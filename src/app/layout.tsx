@@ -8,9 +8,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PetViajes - Hoteles Pet-Friendly en México",
+  title: "🐾 HotPet - Hoteles Pet-Friendly en México",
   description: "Encuentra los mejores hoteles que aceptan mascotas en México. Viaja con tu compañero peludo y disfruta de unas vacaciones inolvidables.",
   keywords: "hoteles pet-friendly, viajes con mascotas, hoteles México, alojamiento mascotas",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

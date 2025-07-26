@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fetch-hotels": "node scripts/fetch-hotels.js"
   },
   "dependencies": {
     "react": "19.1.0",

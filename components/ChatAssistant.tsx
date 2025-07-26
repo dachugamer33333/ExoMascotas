@@ -116,7 +116,7 @@ export default function ChatAssistant() {
                   <span className="text-lg">🤖</span>
                 </div>
                 <div>
-                  <h3 className="font-bold">Asistente PetViajes</h3>
+                  <h3 className="font-bold">Asistente HotPet</h3>
                   <p className="text-sm text-emerald-100">Encuentra tu hotel ideal</p>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function ChatAssistant() {
                     className={`max-w-[80%] rounded-2xl p-4 ${
                       message.isUser
                         ? 'bg-gradient-to-r from-emerald-600 to-green-600 text-white'
-                        : 'bg-white shadow-lg border border-emerald-100'
+                        : 'bg-white shadow-lg border border-emerald-100 text-gray-800'
                     }`}
                   >
                     <p className="text-sm leading-relaxed">{message.content}</p>
@@ -157,7 +157,7 @@ export default function ChatAssistant() {
               
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-white shadow-lg border border-emerald-100 rounded-2xl p-4">
+                  <div className="bg-white shadow-lg border border-emerald-100 rounded-2xl p-4 text-gray-800">
                     <div className="flex space-x-2">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce"></div>
                       <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -179,7 +179,7 @@ export default function ChatAssistant() {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Pregúntame sobre hoteles pet-friendly..."
-                  className="flex-1 px-4 py-3 rounded-2xl border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                  className="flex-1 px-4 py-3 rounded-2xl border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-gray-800 bg-white"
                   disabled={isLoading}
                 />
                 <button
