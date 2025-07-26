@@ -1,8 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { useState, useMemo } from "react";
-import hoteles from "../../../data/hoteles.json";
+import { useState, useEffect } from "react";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import HotelCard from "../../../components/HotelCard";
@@ -38,22 +37,58 @@ export default function HotelesPage() {
     categoria: '',
     busqueda: ''
   });
+  
+  const [hotels, setHotels] = useState<Hotel[]>([]);
+  const [ciudades, setCiudades] = useState<string[]>([]);
+  const [categorias, setCategorias] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const filteredHotels = useMemo(() => {
-    return hoteles.hoteles.filter((hotel: Hotel) => {
-      const matchesCiudad = !searchFilters.ciudad || hotel.ciudad === searchFilters.ciudad;
-      const matchesCategoria = !searchFilters.categoria || hotel.categoria === searchFilters.categoria;
-      const matchesBusqueda = !searchFilters.busqueda || 
-        hotel.nombre.toLowerCase().includes(searchFilters.busqueda.toLowerCase()) ||
-        hotel.ciudad.toLowerCase().includes(searchFilters.busqueda.toLowerCase()) ||
-        hotel.descripcion.toLowerCase().includes(searchFilters.busqueda.toLowerCase());
+  // Función para cargar hoteles
+  const loadHotels = async (filters?: SearchFilters) => {
+    try {
+      setLoading(true);
+      setError(null);
       
-      return matchesCiudad && matchesCategoria && matchesBusqueda;
-    });
-  }, [searchFilters]);
+      const params = new URLSearchParams();
+      const filtersToUse = filters || searchFilters;
+      
+      if (filtersToUse.ciudad) params.append('ciudad', filtersToUse.ciudad);
+      if (filtersToUse.categoria) params.append('categoria', filtersToUse.categoria);
+      if (filtersToUse.busqueda) params.append('busqueda', filtersToUse.busqueda);
+      
+      const response = await fetch(`/api/hotels?${params}`);
+      
+      if (!response.ok) {
+        throw new Error('Error al cargar hoteles');
+      }
+      
+      const data = await response.json();
+      
+      setHotels(data.hoteles || []);
+      setCiudades(data.ciudades || []);
+      setCategorias(data.categorias || []);
+      
+      if (data.error) {
+        console.warn('API Warning:', data.error);
+      }
+      
+    } catch (err) {
+      console.error('Error loading hotels:', err);
+      setError('Error al cargar los hoteles. Por favor, intenta nuevamente.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Cargar hoteles al montar el componente
+  useEffect(() => {
+    loadHotels();
+  }, []);
 
   const handleSearch = (filters: SearchFilters) => {
     setSearchFilters(filters);
+    loadHotels(filters);
   };
   return (
     <div className="min-h-screen bg-gray-50">
@@ -101,8 +136,8 @@ export default function HotelesPage() {
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SearchFilters
-            ciudades={hoteles.ciudades}
-            categorias={hoteles.categorias}
+            ciudades={ciudades}
+            categorias={categorias}
             onSearch={handleSearch}
           />
         </div>
@@ -113,23 +148,57 @@ export default function HotelesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-emerald-800 bg-clip-text text-transparent">
-              {filteredHotels.length > 0 ? `${filteredHotels.length} hoteles encontrados` : 'Nuestros hoteles destacados'}
+              {loading ? 'Buscando hoteles...' : hotels.length > 0 ? `${hotels.length} hoteles encontrados` : 'Nuestros hoteles destacados'}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {filteredHotels.length > 0 
-                ? 'Hoteles que coinciden con tu búsqueda' 
-                : 'Cada alojamiento ha sido verificado para garantizar la mejor experiencia para ti y tu mascota'
+              {loading 
+                ? 'Consultando disponibilidad en tiempo real con Amadeus'
+                : hotels.length > 0 
+                  ? 'Hoteles pet-friendly verificados y disponibles' 
+                  : 'Cada alojamiento ha sido verificado para garantizar la mejor experiencia para ti y tu mascota'
               }
             </p>
           </div>
           
-          {filteredHotels.length > 0 ? (
+          {/* Loading state */}
+          {loading && (
+            <div className="text-center py-16">
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/20 max-w-md mx-auto">
+                <div className="animate-spin w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Buscando hoteles...</h3>
+                <p className="text-gray-600">Consultando la API de Amadeus para obtener los mejores precios</p>
+              </div>
+            </div>
+          )}
+          
+          {/* Error state */}
+          {error && !loading && (
+            <div className="text-center py-16">
+              <div className="bg-red-50 border border-red-200 rounded-3xl p-12 shadow-xl max-w-md mx-auto">
+                <div className="text-6xl mb-4">⚠️</div>
+                <h3 className="text-2xl font-bold text-red-800 mb-4">Error al cargar hoteles</h3>
+                <p className="text-red-600 mb-6">{error}</p>
+                <button
+                  onClick={() => loadHotels()}
+                  className="inline-flex items-center px-6 py-3 rounded-2xl text-white bg-red-600 hover:bg-red-700 transition-all duration-300 shadow-lg font-semibold"
+                >
+                  Reintentar
+                </button>
+              </div>
+            </div>
+          )}
+          
+          {/* Hotels grid */}
+          {!loading && !error && hotels.length > 0 && (
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-              {filteredHotels.map((hotel: Hotel) => (
+              {hotels.map((hotel: Hotel) => (
                 <HotelCard key={hotel.id} hotel={hotel} />
               ))}
             </div>
-          ) : (
+          )}
+          
+          {/* No results */}
+          {!loading && !error && hotels.length === 0 && (
             <div className="text-center py-16">
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/20 max-w-md mx-auto">
                 <div className="text-6xl mb-4">🔍</div>
@@ -138,7 +207,11 @@ export default function HotelesPage() {
                   Intenta ajustar tus filtros de búsqueda para encontrar más opciones.
                 </p>
                 <button
-                  onClick={() => setSearchFilters({ ciudad: '', categoria: '', busqueda: '' })}
+                  onClick={() => {
+                    const emptyFilters = { ciudad: '', categoria: '', busqueda: '' };
+                    setSearchFilters(emptyFilters);
+                    loadHotels(emptyFilters);
+                  }}
                   className="inline-flex items-center px-6 py-3 rounded-2xl text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg font-semibold"
                 >
                   Ver todos los hoteles
