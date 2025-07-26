@@ -24,3 +24,41 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Article content styles */
+.article-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+.article-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.article-content strong {
+  font-weight: 600;
+  color: #1f2937;
+}

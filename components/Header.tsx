@@ -1,11 +1,10 @@
 'use client';
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 
 interface HeaderProps {
-  currentPage?: "inicio" | "hoteles";
+  currentPage?: "inicio" | "blog" | "fichas" | "servicios" | "productos" | "acerca";
 }
 
 export default function Header({ currentPage = "inicio" }: HeaderProps) {
@@ -20,16 +19,10 @@ export default function Header({ currentPage = "inicio" }: HeaderProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="rounded-xl p-2 shadow-lg bg-white">
-              <Image 
-                src="/logo.png" 
-                alt="HotPet Logo" 
-                width={24} 
-                height={24}
-                className="w-6 h-6"
-              />
+              <span className="text-2xl">🦎</span>
             </div>
             <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent hover:from-emerald-700 hover:to-green-700 transition-all duration-300">
-              HotPet
+              ExoMascotas
             </Link>
           </div>
           
@@ -45,14 +38,34 @@ export default function Header({ currentPage = "inicio" }: HeaderProps) {
               Inicio
             </Link>
             <Link 
-              href="/hoteles" 
+              href="/fichas" 
               className={`px-4 py-2 rounded-xl transition-all duration-300 ${
-                currentPage === "hoteles" 
+                currentPage === "fichas" 
                   ? "bg-emerald-100 text-emerald-700 font-semibold shadow-sm" 
                   : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
               }`}
             >
-              Hoteles
+              Fichas
+            </Link>
+            <Link 
+              href="/blog" 
+              className={`px-4 py-2 rounded-xl transition-all duration-300 ${
+                currentPage === "blog" 
+                  ? "bg-emerald-100 text-emerald-700 font-semibold shadow-sm" 
+                  : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+              }`}
+            >
+              Blog
+            </Link>
+            <Link 
+              href="/servicios/veterinarios" 
+              className={`px-4 py-2 rounded-xl transition-all duration-300 ${
+                currentPage === "servicios" 
+                  ? "bg-emerald-100 text-emerald-700 font-semibold shadow-sm" 
+                  : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+              }`}
+            >
+              Veterinarios
             </Link>
             
             <div className="ml-6 flex items-center space-x-3">
@@ -63,10 +76,10 @@ export default function Header({ currentPage = "inicio" }: HeaderProps) {
               </button>
               
               <Link
-                href="/hoteles"
+                href="/productos"
                 className="inline-flex items-center px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
-                Explorar
+                Productos
               </Link>
             </div>
           </nav>
@@ -105,24 +118,48 @@ export default function Header({ currentPage = "inicio" }: HeaderProps) {
               </Link>
               
               <Link 
-                href="/hoteles" 
+                href="/fichas" 
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-4 py-3 rounded-xl transition-all duration-300 ${
-                  currentPage === "hoteles" 
+                  currentPage === "fichas" 
                     ? "bg-emerald-100 text-emerald-700 font-semibold shadow-sm" 
                     : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
                 }`}
               >
-                🏨 Hoteles
+                🦎 Fichas
+              </Link>
+              
+              <Link 
+                href="/blog" 
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-4 py-3 rounded-xl transition-all duration-300 ${
+                  currentPage === "blog" 
+                    ? "bg-emerald-100 text-emerald-700 font-semibold shadow-sm" 
+                    : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+                }`}
+              >
+                📚 Blog
+              </Link>
+              
+              <Link 
+                href="/servicios/veterinarios" 
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-4 py-3 rounded-xl transition-all duration-300 ${
+                  currentPage === "servicios" 
+                    ? "bg-emerald-100 text-emerald-700 font-semibold shadow-sm" 
+                    : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+                }`}
+              >
+                🩺 Veterinarios
               </Link>
               
               <div className="border-t border-gray-200 pt-4">
                 <Link
-                  href="/hoteles"
+                  href="/productos"
                   onClick={() => setIsMenuOpen(false)}
                   className="block w-full text-center px-6 py-3 rounded-xl text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg font-semibold"
                 >
-                  🔍 Explorar hoteles
+                  🛍️ Ver productos
                 </Link>
               </div>
             </nav>

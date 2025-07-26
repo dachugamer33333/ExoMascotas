@@ -16,15 +16,15 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <div className="bg-gradient-to-br from-emerald-500 to-green-500 rounded-xl p-3 shadow-lg">
-                <span className="text-2xl">🐾</span>
+                <span className="text-2xl">🦎</span>
               </div>
               <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
-                PetViajes
+                ExoMascotas
               </h2>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              La plataforma líder para encontrar hoteles pet-friendly en México. 
-              Creamos experiencias inolvidables para familias que viajan con sus mascotas.
+              Portal educativo especializado en mascotas exóticas. 
+              Conectamos a propietarios con conocimiento especializado y veterinarios expertos.
             </p>
             
             {/* Social links */}
@@ -52,9 +52,10 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-emerald-300">Navegación</h3>
             <ul className="space-y-3">
               <li><Link href="/" className="text-gray-300 hover:text-white transition-colors">Inicio</Link></li>
-              <li><Link href="/hoteles" className="text-gray-300 hover:text-white transition-colors">Hoteles</Link></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Destinos</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+              <li><Link href="/fichas" className="text-gray-300 hover:text-white transition-colors">Fichas de Especies</Link></li>
+              <li><Link href="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/servicios/veterinarios" className="text-gray-300 hover:text-white transition-colors">Veterinarios</Link></li>
+              <li><Link href="/productos" className="text-gray-300 hover:text-white transition-colors">Productos</Link></li>
             </ul>
           </div>
           
@@ -62,8 +63,8 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 text-emerald-300">Soporte</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+              <li><Link href="/acerca-de" className="text-gray-300 hover:text-white transition-colors">Acerca de</Link></li>
+              <li><a href="mailto:info@exomascotas.mx" className="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Privacidad</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Términos</a></li>
             </ul>
@@ -74,10 +75,10 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 PetViajes. Todos los derechos reservados.
+              © 2024 ExoMascotas. Todos los derechos reservados.
             </p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <span className="text-gray-400 text-sm">Hecho con ❤️ para los amantes de las mascotas</span>
+              <span className="text-gray-400 text-sm">Hecho con ❤️ para los amantes de mascotas exóticas</span>
             </div>
           </div>
         </div>

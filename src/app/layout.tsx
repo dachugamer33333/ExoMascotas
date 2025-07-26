@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "🐾 HotPet - Hoteles Pet-Friendly en México",
-  description: "Encuentra los mejores hoteles que aceptan mascotas en México. Viaja con tu compañero peludo y disfruta de unas vacaciones inolvidables.",
-  keywords: "hoteles pet-friendly, viajes con mascotas, hoteles México, alojamiento mascotas",
+  title: "🦎 ExoMascotas - Portal Educativo para Mascotas Exóticas",
+  description: "Descubre todo sobre el cuidado de mascotas exóticas: hurones, erizos, reptiles, aves. Guías especializadas, veterinarios y productos recomendados.",
+  keywords: "mascotas exóticas, hurones, erizos, reptiles, aves exóticas, cuidado mascotas, veterinarios especializados",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',

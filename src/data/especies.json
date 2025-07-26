@@ -1,0 +1,122 @@
+{
+  "huron": {
+    "name": "Hurón",
+    "scientificName": "Mustela putorius furo",
+    "category": "Mamífero",
+    "difficulty": "Intermedio",
+    "lifespan": "7-10 años",
+    "size": "Mediano (35-50 cm)",
+    "weight": "0.5-2 kg",
+    "origin": "Europa",
+    "temperament": ["Juguetón", "Social", "Curioso", "Activo"],
+    "description": "El hurón doméstico es un mamífero carnívoro muy activo y social que pertenece a la familia de las comadrejas.",
+    "habitat": {
+      "temperature": "18-22°C",
+      "humidity": "40-60%",
+      "space": "Jaula grande multi-nivel + tiempo libre diario",
+      "substrate": "Papel, toallas o mantas lavables"
+    },
+    "diet": {
+      "primary": "Alimento comercial para hurones de alta calidad",
+      "frequency": "3-4 veces al día",
+      "supplements": "Vitaminas según recomendación veterinaria",
+      "forbidden": ["Chocolate", "Cebolla", "Ajo", "Lácteos", "Frutas dulces"]
+    }
+  },
+  "erizo-africano": {
+    "name": "Erizo Africano",
+    "scientificName": "Atelerix albiventris",
+    "category": "Mamífero",
+    "difficulty": "Intermedio",
+    "lifespan": "3-5 años",
+    "size": "Pequeño (15-20 cm)",
+    "weight": "300-600 g",
+    "origin": "África Central",
+    "temperament": ["Nocturno", "Tímido", "Independiente", "Territorial"],
+    "description": "El erizo africano pigmeo es un pequeño mamífero nocturno cubierto de espinas.",
+    "habitat": {
+      "temperature": "22-26°C (crítico)",
+      "humidity": "30-70%",
+      "space": "Terrario mínimo 75x50 cm",
+      "substrate": "Virutas de papel o fleece"
+    },
+    "diet": {
+      "primary": "Alimento comercial para erizos + insectos",
+      "frequency": "1-2 veces al día",
+      "supplements": "Proteína animal (grillos, tenebrios)",
+      "forbidden": ["Lácteos", "Nueces", "Semillas", "Frutas ácidas"]
+    }
+  },
+  "gecko-leopardo": {
+    "name": "Gecko Leopardo",
+    "scientificName": "Eublepharis macularius",
+    "category": "Reptil",
+    "difficulty": "Principiante",
+    "lifespan": "15-20 años",
+    "size": "Pequeño (20-25 cm)",
+    "weight": "60-100 g",
+    "origin": "Asia Central",
+    "temperament": ["Nocturno", "Dócil", "Territorial", "Activo"],
+    "description": "Reptil nocturno ideal para principiantes, fácil de cuidar y manejar.",
+    "habitat": {
+      "temperature": "24-27°C día / 21-24°C noche",
+      "humidity": "30-40%",
+      "space": "Terrario 75x40x40 cm mínimo",
+      "substrate": "Papel, baldosas o alfombra reptil"
+    },
+    "diet": {
+      "primary": "Insectos vivos (grillos, gusanos)",
+      "frequency": "Cada 2-3 días",
+      "supplements": "Calcio con D3",
+      "forbidden": ["Vegetales", "Frutas", "Insectos salvajes"]
+    }
+  },
+  "iguana-verde": {
+    "name": "Iguana Verde",
+    "scientificName": "Iguana iguana",
+    "category": "Reptil",
+    "difficulty": "Avanzado",
+    "lifespan": "20+ años",
+    "size": "Grande (1.5-2 m)",
+    "weight": "4-6 kg",
+    "origin": "América Central",
+    "temperament": ["Territorial", "Independiente", "Herbívoro", "Diurno"],
+    "description": "Reptil grande que requiere terrarios amplios y cuidados especializados.",
+    "habitat": {
+      "temperature": "28-32°C día / 24-26°C noche",
+      "humidity": "60-80%",
+      "space": "Terrario muy grande 2x1.5x2 m",
+      "substrate": "Corteza, tierra reptil"
+    },
+    "diet": {
+      "primary": "Vegetales de hoja verde, flores",
+      "frequency": "Diario",
+      "supplements": "Calcio, vitaminas",
+      "forbidden": ["Proteína animal", "Lechuga iceberg", "Espinacas"]
+    }
+  },
+  "chinchilla": {
+    "name": "Chinchilla",
+    "scientificName": "Chinchilla chinchilla",
+    "category": "Mamífero",
+    "difficulty": "Intermedio",
+    "lifespan": "10-15 años",
+    "size": "Pequeño (25-35 cm)",
+    "weight": "400-800 g",
+    "origin": "Sudamérica",
+    "temperament": ["Nocturno", "Activo", "Social", "Saltarín"],
+    "description": "Roedor de pelaje ultra suave que requiere baños de polvo especiales.",
+    "habitat": {
+      "temperature": "16-21°C",
+      "humidity": "30-50%",
+      "space": "Jaula alta con plataformas",
+      "substrate": "Virutas sin polvo"
+    },
+    "diet": {
+      "primary": "Pellets especiales para chinchilla",
+      "frequency": "Diario",
+      "supplements": "Heno timothy ocasional",
+      "forbidden": ["Agua directa", "Frutas", "Nueces", "Semillas"]
+    }
+  }
+}
